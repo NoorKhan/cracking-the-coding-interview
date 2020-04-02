@@ -26,6 +26,16 @@ class LinkedList:
 
         self.size = self.size + 1
 
+    def append_node(self, node):
+        if self.head is None:
+            self.head = node
+            self.tail = node
+        else:
+            self.tail.next = node
+            self.tail = node
+
+        self.size = self.size + 1
+
     def remove(self, data):
         current_node = self.head
         if current_node is None:
@@ -52,4 +62,4 @@ class LinkedList:
             while current_node is not None:
                 print(current_node.data, "-> ", end = "")
                 current_node = current_node.next
-            print('None')
+            print(None)
