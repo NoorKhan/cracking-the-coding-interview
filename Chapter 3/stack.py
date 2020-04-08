@@ -12,6 +12,9 @@ class Stack:
         if self.top is not None:
             current_top_data = self.top.data
             self.top = self.top.next
+
+            self.size = self.size - 1
+
             return current_top_data
         else:
             return None
@@ -20,6 +23,8 @@ class Stack:
         node = self.Node(data)
         node.next = self.top
         self.top = node
+
+        self.size = self.size + 1
 
     def peek(self):
         return self.top.data if self.top is not None else None
