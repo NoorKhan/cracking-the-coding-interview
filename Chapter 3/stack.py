@@ -33,13 +33,7 @@ class Stack:
         return self.size == 0
 
     def print(self):
-        while self.peek() is not None:
-            print(self.pop())
-
-
-stack = Stack()
-stack.push(1)
-stack.push(2)
-stack.push(3)
-
-stack.print()
+        current_node = self.top
+        while current_node is not None:
+            print(current_node.data)
+            current_node = current_node.next
